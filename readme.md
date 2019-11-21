@@ -1,12 +1,8 @@
-## Final proyect Full Stack JS
+## Final proyect Full Stack JS -- BACKEND
 
 ### This project contain this technologies:
 
 ```
-    FRONT END
-        * HTML5
-        * CSS3 - Flexbox
-        * React
     * BACK END
         * NodeJs
         * Mongo DB 
