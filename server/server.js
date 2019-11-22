@@ -1,8 +1,9 @@
 const express       = require('express')
 const app           = express()
 const bodyParser    = require('body-parser')
-
 const port          = 3000
+
+const { Book, User, Category, Author } = require('./schemas')
 
 
 // parse application/x-www-form-urlencoded
@@ -13,6 +14,11 @@ app.use(bodyParser.json())
 
 app.get('/user', (req, res) => {
     console.log('estamos bien')
+    res.json('todo OK')
+})
+
+app.get('/user/:id', (req, res) => {
+    console.log('estamos bien con id')
     res.json('todo OK')
 })
 
