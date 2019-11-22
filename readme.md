@@ -14,5 +14,6 @@ This project is about a mini facebook, with login, register and public POST
 
 ```
     $ npm install 
+    $ node server/server
     In browser put http://localhost:3000 
 ```
