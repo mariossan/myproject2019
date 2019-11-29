@@ -1,7 +1,8 @@
 const express       = require('express')
+const cors          = require("cors")
 const app           = express()
 const bodyParser    = require('body-parser')
-const port          = 3000
+const port          = 8000
 
 const { Book, User, Category, Author } = require('./schemas')
 
@@ -10,6 +11,9 @@ const { Book, User, Category, Author } = require('./schemas')
 app.use(bodyParser.urlencoded({ extended: false })) 
 // parse application/json
 app.use(bodyParser.json())
+
+app.use(cors())
+
 
 
 app.get('/user', (req, res) => {
@@ -31,6 +35,18 @@ app.get('/upload/:user_id', (req, res) => {
     res.json(`Aqui se va a mostrar la lista los uploads del usuario en curso ${user_id}`)
 })
 
+
+app.post("/login", (req, res) => {
+    console.log(req.body)
+    res.json( req.body )
+})
+
+
+app.post("/register", (req, res) => {
+    console.log(req.body)
+    res.json( req.body )
+})
+
 /**
  * Datos necesarios a recibir
  * @param { user_id:number, title:string, files:file, receivers:string, message:string}
@@ -42,5 +58,5 @@ app.post('/upload', (req, res) => {
 
 
 app.listen( port, () =>{
-    console.log('conexion de servidor establecida')
+    console.log(`conexion de servidor establecida ${ port }`)
 } )
